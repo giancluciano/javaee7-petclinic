@@ -47,6 +47,12 @@ public class Vet {
     @NotEmpty
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     private String lastName;
+    
+    @Column(name = "resignationDate")
+    @NotEmpty
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    private String resignationDate;
+
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialties",
@@ -110,6 +116,14 @@ public class Vet {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getResignationDate() {
+        return resignationDate;
+    }
+
+    public void setResignationDate(String resignationDate) {
+        this.resignationDate = resignationDate;
     }
 
     public String getLastName() {

@@ -51,11 +51,18 @@ public class Owner {
     @NotEmpty
     @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String address;
+    
+    @Column(name = "cpf")
+    @NotEmpty
+    @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
+    private String cpf;
 
     @Column(name = "city")
     @NotEmpty
     @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
+
+
 
     @Column(name = "telephone")
     @NotEmpty
@@ -93,6 +100,14 @@ public class Owner {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getAddress() {
